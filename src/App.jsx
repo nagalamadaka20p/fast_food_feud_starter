@@ -50,7 +50,7 @@ export function App() {
       )
     }
   })
-  console.log('currentMenuItems: ', currentMenuItems);
+  
   
 
   return (
@@ -111,8 +111,8 @@ export function App() {
               return(
                 <Chip label = {item.item_name} 
                   key = {index}
-                  isActive = {item.item_name === selectedItem? true: false}
-                  onClick = {() => handleClickItem(item.item_name)}/>
+                  isActive = {item === selectedItem? true: false}
+                  onClick = {() => handleClickItem(item)}/>
               )
             })}
             {/* YOUR CODE HERE */}
@@ -121,7 +121,7 @@ export function App() {
           {/* NUTRITION FACTS */}
           
           <div className="NutritionFacts nutrition-facts">{/* YOUR CODE HERE */}
-          {selectedItem === "" ? null: <NutritionalLabel props = {selectedItem}/>}
+          {selectedItem === "" ? null: <NutritionalLabel item = {selectedItem}/>}
                  
           </div>
         </div>
